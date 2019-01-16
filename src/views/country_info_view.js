@@ -19,6 +19,16 @@ CountryInfoView.prototype.render = function (country) {
   countryName.textContent = country.name;
   this.container.appendChild(countryName);
 
+  const countryRegion = document.createElement('p');
+  countryRegion.textContent = country.region;
+  this.container.appendChild(countryRegion);
+
+  const img = document.createElement('img');
+  img.classList.add("medium-image");
+  img.src = country.flag;
+  this.container.appendChild(img);
+  return img;
+
 };
 
 CountryInfoView.prototype.createCountryList = function (countries) {
